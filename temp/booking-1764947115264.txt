@@ -1,0 +1,21 @@
+
+FLIGHT BOOKING REQUEST
+=====================
+
+Submitted: 12/5/2025, 6:05:15 PM
+
+Flight Details:
+- From: Addis Ababa
+- To: Dubai
+- Departure Date: 1111-11-11
+- Return Date: 1111-11-11
+- Number of Passengers: 1
+- Travel Class: economy
+- Special Requests: GHFGHDGD
+
+Attachments:
+- Passport Copy: Attached
+- National ID Copy: Attached
+
+Please follow up with the customer as soon as possible.
+    

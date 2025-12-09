@@ -1,0 +1,30 @@
+{
+  "name": "power-travel-agency",
+  "version": "1.0.0",
+  "description": "Power Travel Agency website with email form submission",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "axios": "^1.13.2",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.7",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": [
+    "travel",
+    "agency",
+    "booking",
+    "email"
+  ],
+  "author": "Power Travel Agency",
+  "license": "MIT"
+}

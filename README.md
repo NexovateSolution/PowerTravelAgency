@@ -95,11 +95,90 @@ PowerTravelAgency/
 
 ## Deployment
 
-For production deployment, make sure to:
-1. Set the environment variables on your hosting platform
-2. Use a proper process manager like PM2
-3. Configure HTTPS for security
-4. Set up proper error logging
+### Option 1: Vercel Deployment (Recommended)
+
+1. **Install Vercel CLI**:
+   ```bash
+   npm install -g vercel
+   ```
+
+2. **Login to Vercel**:
+   ```bash
+   vercel login
+   ```
+
+3. **Deploy**:
+   ```bash
+   vercel
+   ```
+
+4. **Set Environment Variables** in Vercel Dashboard:
+   - Go to your project settings
+   - Add `EMAIL_USER` and `EMAIL_PASS` as environment variables
+   - Redeploy the project
+
+5. **Custom Domain**:
+   - In Vercel Dashboard, go to Settings > Domains
+   - Add `powertravelagency.com`
+   - Update your domain's DNS settings as instructed by Vercel
+
+### Option 2: DirectAdmin/cPanel Deployment
+
+1. **Upload Files** via FTP or File Manager:
+   - Upload all files to `public_html` or your domain folder
+   - Make sure `node_modules` folder is uploaded or run `npm install` via SSH
+
+2. **Install Node.js** (if not already installed):
+   - Enable Node.js in DirectAdmin/cPanel
+   - Select Node.js version 14 or higher
+
+3. **Create Application**:
+   - Set application root to your domain folder
+   - Set application startup file to `server.js`
+   - Set port (usually 3000 or as assigned by hosting)
+
+4. **Environment Variables**:
+   - Add `EMAIL_USER` and `EMAIL_PASS` in the Node.js app settings
+
+5. **Start the Application**:
+   - Click "Start" or "Restart" in the Node.js interface
+
+6. **DNS Configuration**:
+   - Make sure your domain `powertravelagency.com` points to your server IP
+   - Wait for DNS propagation (can take 24-48 hours)
+
+### Troubleshooting DirectAdmin Issues
+
+If `powertravelagency.com` is not working:
+
+1. **Check DNS Settings**:
+   - Verify A record points to correct IP address
+   - Use tools like `nslookup powertravelagency.com` or https://dnschecker.org
+
+2. **Check Node.js App Status**:
+   - Ensure the app is running in DirectAdmin
+   - Check application logs for errors
+
+3. **Check Port Configuration**:
+   - Verify the port in `server.js` matches DirectAdmin settings
+   - Some hosts require specific ports
+
+4. **Check File Permissions**:
+   - Ensure files have correct permissions (644 for files, 755 for directories)
+
+5. **SSL Certificate**:
+   - Install SSL certificate for HTTPS
+   - Use Let's Encrypt (free) via DirectAdmin
+
+### Production Checklist
+
+- [ ] Set environment variables on hosting platform
+- [ ] Use process manager like PM2 (for VPS/dedicated servers)
+- [ ] Configure HTTPS/SSL certificate
+- [ ] Set up proper error logging
+- [ ] Test email functionality
+- [ ] Test all forms and features
+- [ ] Verify domain DNS settings
 
 ## Support
 

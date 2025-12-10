@@ -905,8 +905,10 @@
 
           const result = await response.json();
 
-          if (result.success) {
-            alert('✅ Booking sent via WhatsApp successfully! We will review your documents and contact you shortly.');
+          if (result.success && result.whatsappUrl) {
+            // Redirect to WhatsApp
+            window.open(result.whatsappUrl, '_blank');
+            alert('✅ Redirecting to WhatsApp! Please attach your Passport and ID photos in the chat.');
             bookingForm.reset();
             updateTripType();
           } else {

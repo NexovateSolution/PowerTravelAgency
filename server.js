@@ -648,7 +648,7 @@ app.post('/api/submit-whatsapp', upload.fields([
     message += `\n📸 *Note:* I will attach my Passport and ID photos in the chat.\n`;
     message += `\n🙏 Please provide the best available options and pricing. Thank you!`;
 
-    const whatsappNumber = '251911737373';
+    const whatsappNumber = '251940333383';
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
     res.json({ success: true, whatsappUrl: whatsappUrl });

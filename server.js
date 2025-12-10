@@ -460,6 +460,36 @@ ID: ${req.files['national_id_file'] ? '✅ Attached' : '❌ Not provided'}
   }
 });
 
+// API route aliases for Vercel - these are the same as the routes above but with /api/ prefix
+// This is needed because the frontend posts to /api/submit-* endpoints
+
+// Alias for /api/submit-booking
+app.post('/api/submit-booking', upload.fields([
+  { name: 'passport_file', maxCount: 1 },
+  { name: 'national_id_file', maxCount: 1 }
+]), (req, res, next) => {
+  // Forward to the main /submit-booking handler
+  req.url = '/submit-booking';
+  app.handle(req, res, next);
+});
+
+// Alias for /api/submit-whatsapp
+app.post('/api/submit-whatsapp', upload.fields([
+  { name: 'passport_file', maxCount: 1 },
+  { name: 'national_id_file', maxCount: 1 }
+]), (req, res, next) => {
+  // Forward to the main /submit-whatsapp handler
+  req.url = '/submit-whatsapp';
+  app.handle(req, res, next);
+});
+
+// Alias for /api/submit-contact
+app.post('/api/submit-contact', (req, res, next) => {
+  // Forward to the main /submit-contact handler
+  req.url = '/submit-contact';
+  app.handle(req, res, next);
+});
+
 // For local development
 if (process.env.NODE_ENV !== 'production') {
   app.listen(PORT, () => {

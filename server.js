@@ -460,34 +460,246 @@ ID: ${req.files['national_id_file'] ? '✅ Attached' : '❌ Not provided'}
   }
 });
 
-// API route aliases for Vercel - these are the same as the routes above but with /api/ prefix
-// This is needed because the frontend posts to /api/submit-* endpoints
+// API route aliases for Vercel - duplicate handlers with /api/ prefix
+// These handle requests from the frontend which posts to /api/submit-* endpoints
 
-// Alias for /api/submit-booking
+// Handle /api/submit-booking (same as /submit-booking)
 app.post('/api/submit-booking', upload.fields([
   { name: 'passport_file', maxCount: 1 },
   { name: 'national_id_file', maxCount: 1 }
-]), (req, res, next) => {
-  // Forward to the main /submit-booking handler
-  req.url = '/submit-booking';
-  app.handle(req, res, next);
+]), async (req, res) => {
+  try {
+    const {
+      'trip-type': tripType,
+      'from-city': fromCity,
+      'to-city': toCity,
+      'departure-date': departureDate,
+      'return-date': returnDate,
+      'phone-number': phoneNumber,
+      passengers,
+      'travel-class': travelClass,
+      'special-requests': specialRequests
+    } = req.body;
+
+    const bookingData = {
+      tripType: tripType || 'round-trip',
+      fromCity,
+      toCity,
+      departureDate,
+      returnDate: returnDate || 'N/A',
+      phoneNumber,
+      passengers,
+      travelClass,
+      specialRequests: specialRequests || 'None',
+      submittedAt: new Date().toLocaleString()
+    };
+
+    const emailSubject = 'New Flight Booking Request - Power Travel Agency';
+    const emailBody = `
+      <h2>New Flight Booking Request</h2>
+      <p><strong>Submitted:</strong> ${bookingData.submittedAt}</p>
+      
+      <h3>Flight Details:</h3>
+      <ul>
+        <li><strong>Trip Type:</strong> ${bookingData.tripType === 'one-way' ? 'One Way' : 'Round Trip'}</li>
+        <li><strong>From:</strong> ${bookingData.fromCity}</li>
+        <li><strong>To:</strong> ${bookingData.toCity}</li>
+        <li><strong>Departure Date:</strong> ${bookingData.departureDate}</li>
+        <li><strong>Return Date:</strong> ${bookingData.returnDate}</li>
+        <li><strong>Phone Number:</strong> ${bookingData.phoneNumber}</li>
+        <li><strong>Number of Passengers:</strong> ${bookingData.passengers}</li>
+        <li><strong>Travel Class:</strong> ${bookingData.travelClass}</li>
+        <li><strong>Special Requests:</strong> ${bookingData.specialRequests}</li>
+      </ul>
+      
+      <p><strong>Attachments:</strong></p>
+      <ul>
+        <li>Passport Copy: ${req.files['passport_file'] ? 'Attached' : 'Not provided'}</li>
+        <li>National ID Copy: ${req.files['national_id_file'] ? 'Attached' : 'Not provided'}</li>
+      </ul>
+      
+      <p>Please follow up with the customer as soon as possible.</p>
+    `;
+
+    const fileName = `booking-${Date.now()}.txt`;
+    const filePath = path.join(__dirname, 'temp', fileName);
+
+    if (!fs.existsSync(path.join(__dirname, 'temp'))) {
+      fs.mkdirSync(path.join(__dirname, 'temp'));
+    }
+
+    const fileContent = `
+FLIGHT BOOKING REQUEST
+=====================
+
+Submitted: ${bookingData.submittedAt}
+
+Flight Details:
+- Trip Type: ${bookingData.tripType === 'one-way' ? 'One Way' : 'Round Trip'}
+- From: ${bookingData.fromCity}
+- To: ${bookingData.toCity}
+- Departure Date: ${bookingData.departureDate}
+- Return Date: ${bookingData.returnDate}
+- Phone Number: ${bookingData.phoneNumber}
+- Number of Passengers: ${bookingData.passengers}
+- Travel Class: ${bookingData.travelClass}
+- Special Requests: ${bookingData.specialRequests}
+
+Attachments:
+- Passport Copy: ${req.files['passport_file'] ? 'Attached' : 'Not provided'}
+- National ID Copy: ${req.files['national_id_file'] ? 'Attached' : 'Not provided'}
+
+Please follow up with the customer as soon as possible.
+    `;
+
+    fs.writeFileSync(filePath, fileContent);
+
+    const attachments = [
+      {
+        filename: fileName,
+        path: filePath
+      }
+    ];
+
+    if (req.files['passport_file']) {
+      attachments.push({
+        filename: `Passport-${req.files['passport_file'][0].originalname}`,
+        path: req.files['passport_file'][0].path
+      });
+    }
+
+    if (req.files['national_id_file']) {
+      attachments.push({
+        filename: `NationalID-${req.files['national_id_file'][0].originalname}`,
+        path: req.files['national_id_file'][0].path
+      });
+    }
+
+    const mailOptions = {
+      from: process.env.EMAIL_USER || 'powerbookings2025@gmail.com',
+      to: 'powerbookings2025@gmail.com',
+      subject: emailSubject,
+      html: emailBody,
+      attachments: attachments
+    };
+
+    await transporter.sendMail(mailOptions);
+
+    fs.unlinkSync(filePath);
+
+    if (req.files['passport_file']) {
+      fs.unlinkSync(req.files['passport_file'][0].path);
+    }
+    if (req.files['national_id_file']) {
+      fs.unlinkSync(req.files['national_id_file'][0].path);
+    }
+
+    res.json({ success: true, message: 'Booking request sent successfully!' });
+  } catch (error) {
+    console.error('Error sending booking email:', error);
+    res.status(500).json({ success: false, message: 'Failed to send booking request. Please try again.' });
+  }
 });
 
-// Alias for /api/submit-whatsapp
+// Handle /api/submit-whatsapp (same as /submit-whatsapp)
 app.post('/api/submit-whatsapp', upload.fields([
   { name: 'passport_file', maxCount: 1 },
   { name: 'national_id_file', maxCount: 1 }
-]), (req, res, next) => {
-  // Forward to the main /submit-whatsapp handler
-  req.url = '/submit-whatsapp';
-  app.handle(req, res, next);
+]), async (req, res) => {
+  try {
+    const {
+      'trip-type': tripType,
+      'from-city': fromCity,
+      'to-city': toCity,
+      'departure-date': departureDate,
+      'return-date': returnDate,
+      'phone-number': phoneNumber,
+      passengers,
+      'travel-class': travelClass,
+      'special-requests': specialRequests
+    } = req.body;
+
+    const bookingData = {
+      tripType: tripType || 'round-trip',
+      fromCity,
+      toCity,
+      departureDate,
+      returnDate: returnDate || 'N/A',
+      phoneNumber,
+      passengers,
+      travelClass,
+      specialRequests: specialRequests || 'None'
+    };
+
+    let message = `✈️ *Flight Booking Request*\n\n`;
+    message += `🎫 *Trip Type:* ${bookingData.tripType === 'one-way' ? 'One Way' : 'Round Trip'}\n`;
+    message += `📍 *From:* ${bookingData.fromCity}\n`;
+    message += `🎯 *To:* ${bookingData.toCity}\n`;
+    message += `📅 *Departure:* ${bookingData.departureDate}\n`;
+    if (bookingData.returnDate && bookingData.tripType === 'round-trip') message += `🔄 *Return:* ${bookingData.returnDate}\n`;
+    message += `📞 *Phone:* ${bookingData.phoneNumber}\n`;
+    message += `👥 *Passengers:* ${bookingData.passengers}\n`;
+    message += `💺 *Class:* ${bookingData.travelClass}\n`;
+    if (bookingData.specialRequests) message += `📝 *Special Requests:* ${bookingData.specialRequests}\n`;
+    message += `\n📸 *Note:* I will attach my Passport and ID photos in the chat.\n`;
+    message += `\n🙏 Please provide the best available options and pricing. Thank you!`;
+
+    const whatsappNumber = '251911737373';
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    res.json({ success: true, whatsappUrl: whatsappUrl });
+  } catch (error) {
+    console.error('Error processing WhatsApp submission:', error);
+    res.status(500).json({ success: false, message: 'Failed to process request. Please try again.' });
+  }
 });
 
-// Alias for /api/submit-contact
-app.post('/api/submit-contact', (req, res, next) => {
-  // Forward to the main /submit-contact handler
-  req.url = '/submit-contact';
-  app.handle(req, res, next);
+// Handle /api/submit-contact (accepts JSON from frontend)
+app.post('/api/submit-contact', async (req, res) => {
+  try {
+    const { name, email, phone, message } = req.body;
+
+    const contactData = {
+      name,
+      email,
+      phone,
+      message,
+      submittedAt: new Date().toLocaleString()
+    };
+
+    const emailSubject = 'New Contact Inquiry - Power Travel Agency';
+    const emailBody = `
+      <h2>New Contact Inquiry</h2>
+      <p><strong>Submitted:</strong> ${contactData.submittedAt}</p>
+      
+      <h3>Contact Details:</h3>
+      <ul>
+        <li><strong>Name:</strong> ${contactData.name}</li>
+        <li><strong>Email:</strong> ${contactData.email}</li>
+        <li><strong>Phone:</strong> ${contactData.phone || 'Not provided'}</li>
+      </ul>
+      
+      <h3>Message:</h3>
+      <p>${contactData.message}</p>
+      
+      <p>Please respond to this inquiry promptly.</p>
+    `;
+
+    const mailOptions = {
+      from: process.env.EMAIL_USER || 'powerbookings2025@gmail.com',
+      to: 'powerbookings2025@gmail.com',
+      subject: emailSubject,
+      html: emailBody,
+      replyTo: contactData.email
+    };
+
+    await transporter.sendMail(mailOptions);
+
+    res.json({ success: true, message: 'Contact message sent successfully!' });
+  } catch (error) {
+    console.error('Error sending contact email:', error);
+    res.status(500).json({ success: false, message: 'Failed to send message. Please try again.' });
+  }
 });
 
 // For local development

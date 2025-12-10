@@ -21,9 +21,9 @@ const multer = require('multer');
 // Configure multer for file uploads
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    const uploadDir = path.join(__dirname, 'uploads');
+    const uploadDir = process.env.VERCEL ? '/tmp/uploads' : path.join(__dirname, 'uploads');
     if (!fs.existsSync(uploadDir)) {
-      fs.mkdirSync(uploadDir);
+      fs.mkdirSync(uploadDir, { recursive: true });
     }
     cb(null, uploadDir);
   },
@@ -522,10 +522,11 @@ app.post('/api/submit-booking', upload.fields([
     `;
 
     const fileName = `booking-${Date.now()}.txt`;
-    const filePath = path.join(__dirname, 'temp', fileName);
+    const tempDir = process.env.VERCEL ? '/tmp' : path.join(__dirname, 'temp');
+    const filePath = path.join(tempDir, fileName);
 
-    if (!fs.existsSync(path.join(__dirname, 'temp'))) {
-      fs.mkdirSync(path.join(__dirname, 'temp'));
+    if (!fs.existsSync(tempDir)) {
+      fs.mkdirSync(tempDir, { recursive: true });
     }
 
     const fileContent = `

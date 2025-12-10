@@ -4,36 +4,27 @@
     {
       "src": "server.js",
       "use": "@vercel/node"
-    },
-    {
-      "src": "public/**",
-      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/submit-whatsapp",
-      "dest": "/server.js"
+      "methods": ["POST"],
+      "dest": "server.js"
     },
     {
       "src": "/submit-booking",
-      "dest": "/server.js"
+      "methods": ["POST"],
+      "dest": "server.js"
     },
     {
       "src": "/submit-contact",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/(.*\\.(png|jpg|jpeg|gif|svg|css|js|ico))",
-      "dest": "/public/$1"
-    },
-    {
-      "src": "/",
-      "dest": "/server.js"
+      "methods": ["POST"],
+      "dest": "server.js"
     },
     {
       "src": "/(.*)",
-      "dest": "/server.js"
+      "dest": "server.js"
     }
   ]
 }

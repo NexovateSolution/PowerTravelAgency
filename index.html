@@ -898,7 +898,7 @@
           submitWhatsApp.disabled = true;
 
           const formData = new FormData(bookingForm);
-          const response = await fetch('/submit-whatsapp', {
+          const response = await fetch('/api/submit-whatsapp', {
             method: 'POST',
             body: formData
           });
@@ -934,7 +934,7 @@
           submitEmail.disabled = true;
 
           const formData = new FormData(bookingForm);
-          const response = await fetch('/submit-booking', {
+          const response = await fetch('/api/submit-booking', {
             method: 'POST',
             body: formData
           });
@@ -973,9 +973,17 @@
         submitBtn.disabled = true;
 
         const formData = new FormData(contactForm);
-        const response = await fetch('/submit-contact', {
+        const response = await fetch('/api/submit-contact', {
           method: 'POST',
-          body: formData
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name: formData.get('name'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            message: formData.get('message')
+          })
         });
 
         const result = await response.json();

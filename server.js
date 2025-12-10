@@ -607,6 +607,9 @@ app.post('/api/submit-whatsapp', upload.fields([
   { name: 'national_id_file', maxCount: 1 }
 ]), async (req, res) => {
   try {
+    console.log('WhatsApp endpoint hit');
+    console.log('Request body:', req.body);
+    
     const {
       'trip-type': tripType,
       'from-city': fromCity,
@@ -650,7 +653,8 @@ app.post('/api/submit-whatsapp', upload.fields([
     res.json({ success: true, whatsappUrl: whatsappUrl });
   } catch (error) {
     console.error('Error processing WhatsApp submission:', error);
-    res.status(500).json({ success: false, message: 'Failed to process request. Please try again.' });
+    console.error('Error stack:', error.stack);
+    res.status(500).json({ success: false, message: 'Failed to process request. Please try again.', error: error.message });
   }
 });
 

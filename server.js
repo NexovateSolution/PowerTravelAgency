@@ -13,6 +13,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname)));
 
 const multer = require('multer');
@@ -44,7 +45,12 @@ const transporter = nodemailer.createTransport({
 
 // Serve the main HTML file
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  const indexPath = path.join(__dirname, 'public', 'index.html');
+  if (fs.existsSync(indexPath)) {
+    res.sendFile(indexPath);
+  } else {
+    res.sendFile(path.join(__dirname, 'index.html'));
+  }
 });
 
 // Handle booking form submission
@@ -454,9 +460,15 @@ ID: ${req.files['national_id_file'] ? '✅ Attached' : '❌ Not provided'}
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-  console.log('Make sure to set your email credentials in environment variables:');
-  console.log('EMAIL_USER=your-email@gmail.com');
-  console.log('EMAIL_PASS=your-app-password');
-});
+// For local development
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+    console.log('Make sure to set your email credentials in environment variables:');
+    console.log('EMAIL_USER=your-email@gmail.com');
+    console.log('EMAIL_PASS=your-app-password');
+  });
+}
+
+// Export for Vercel
+module.exports = app;

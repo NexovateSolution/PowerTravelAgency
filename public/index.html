@@ -1,0 +1,1125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Power Travel Agency - Go Beyond Ordinary</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHNT5CBL61"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QHNT5CBL61');
+  </script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    body {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(249, 115, 22, 0.3)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600') center/cover;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .services-bg {
+      background: linear-gradient(rgba(255, 255, 255, 0.97), rgba(255, 255, 255, 0.97)), url('https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1600') center/cover;
+    }
+
+    .deals-bg {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(249, 115, 22, 0.2)), url('https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=1600') center/cover;
+    }
+
+    .testimonials-bg {
+      background: linear-gradient(rgba(249, 250, 251, 0.98), rgba(249, 250, 251, 0.98)), url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600') center/cover;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+      cursor: pointer;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1) translateY(-2px);
+      box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5);
+    }
+
+    .autocomplete-dropdown {
+      position: absolute;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      max-height: 240px;
+      overflow-y: auto;
+      width: 100%;
+      z-index: 100;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+      display: none;
+      margin-top: 4px;
+    }
+
+    .autocomplete-item {
+      padding: 14px 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .autocomplete-item:last-child {
+      border-bottom: none;
+    }
+
+    .autocomplete-item:hover {
+      background: linear-gradient(135deg, #f97316, #ea580c);
+      color: white;
+    }
+
+    .smooth-scroll {
+      scroll-behavior: smooth;
+    }
+
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #f97316, #ea580c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    @media (max-width: 768px) {
+      .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        font-size: 28px;
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+  </style>
+  <style>
+    #navbar {
+      background-color: #ffffff;
+    }
+  </style>
+  <style>
+    @view-transition {
+      navigation: auto;
+    }
+  </style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+</head>
+
+<body class="smooth-scroll">
+  <header><!-- Navigation -->
+    <nav id="navbar" class="w-full fixed top-0 z-50 transition-all duration-300 bg-white shadow-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center space-x-3">
+            <img src="logo.png" alt="Power Travel Agency Logo" class="w-16 h-16 object-contain rounded-lg">
+            <div>
+              <h1 id="logo-text" class="text-xl font-bold text-black">Power Travel Agency</h1>
+              <p id="motto-text" class="text-xs italic font-bold text-gray-600">Go Beyond Ordinary</p>
+            </div>
+          </div><button id="mobile-menu-btn" class="md:hidden text-2xl text-black"> <i class="fas fa-bars"></i>
+          </button>
+          <div id="nav-menu" class="hidden md:flex space-x-6 items-center"><a href="#home"
+              class="text-gray-800 hover:text-orange-500 transition font-medium">Home</a> <a href="#about"
+              class="text-gray-800 hover:text-orange-500 transition font-medium">About</a> <a href="#services"
+              class="text-gray-800 hover:text-orange-500 transition font-medium">Services</a> <a href="#deals"
+              class="text-gray-800 hover:text-orange-500 transition font-medium">Deals</a> <a href="#booking"
+              class="text-gray-800 hover:text-orange-500 transition font-medium">Book Now</a> <a href="#contact"
+              class="text-gray-800 hover:text-orange-500 transition font-medium">Contact</a>
+          </div>
+        </div><!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden pb-4 bg-white">
+          <div class="flex flex-col space-y-3"><a href="#home"
+              class="text-gray-800 hover:text-orange-500 transition font-medium">Home</a> <a href="#about"
+              class="text-gray-800 hover:text-orange-500 transition font-medium">About</a> <a href="#services"
+              class="text-gray-800 hover:text-orange-500 transition font-medium">Services</a> <a href="#deals"
+              class="text-gray-800 hover:text-orange-500 transition font-medium">Deals</a> <a href="#booking"
+              class="text-gray-800 hover:text-orange-500 transition font-medium">Book Now</a> <a href="#contact"
+              class="text-gray-800 hover:text-orange-500 transition font-medium">Contact</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="w-full"><!-- Hero Section -->
+    <section id="home" class="hero-section pt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-48 text-center text-white">
+        <div class="animate-fade-in">
+          <h1 id="hero-title" class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">Your Journey Begins Here</h1>
+          <p id="hero-subtitle" class="text-xl md:text-3xl mb-10 font-light tracking-wide">Go Beyond Ordinary</p>
+          <div class="flex flex-col sm:flex-row gap-5 justify-center">
+            <a href="#booking" class="group px-10 py-4 bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 rounded-full text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105">
+              <span class="flex items-center justify-center gap-2">
+                <i class="fas fa-plane"></i>
+                Book Your Flight
+              </span>
+            </a>
+            <a href="#contact" class="px-10 py-4 bg-white text-gray-900 hover:bg-gray-50 rounded-full text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105">
+              <span class="flex items-center justify-center gap-2">
+                <i class="fas fa-envelope"></i>
+                Contact Us
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section><!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-6 text-gray-900">About Us</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-orange-600 to-orange-400 mx-auto mb-12 rounded-full"></div>
+        <p id="about-description" class="text-xl text-center text-gray-600 mb-16 max-w-4xl mx-auto leading-relaxed">Power Travel Agency provides reliable ticketing services with a commitment to transparency, speed, and customer satisfaction.</p>
+        <div class="mb-16">
+          <h3 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">Why Choose Power Travel Agency</h3>
+          <div class="grid md:grid-cols-5 gap-6">
+            <div class="text-center p-8 bg-gradient-to-br from-white to-gray-50 rounded-2xl card-hover border border-gray-100">
+              <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg">
+                <i class="fas fa-bolt text-white text-2xl"></i>
+              </div>
+              <h4 class="font-semibold mb-2">Fast Response</h4>
+              <p class="text-sm text-gray-600">Quick replies to all inquiries</p>
+            </div>
+            <div class="text-center p-8 bg-gradient-to-br from-white to-gray-50 rounded-2xl card-hover border border-gray-100">
+              <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg">
+                <i class="fas fa-tag text-white text-2xl"></i>
+              </div>
+              <h4 class="font-semibold mb-2">Best Flight Deals</h4>
+              <p class="text-sm text-gray-600">Competitive prices always</p>
+            </div>
+            <div class="text-center p-8 bg-gradient-to-br from-white to-gray-50 rounded-2xl card-hover border border-gray-100">
+              <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg">
+                <i class="fas fa-shield-alt text-white text-2xl"></i>
+              </div>
+              <h4 class="font-semibold mb-2">Safe &amp; Secure</h4>
+              <p class="text-sm text-gray-600">Protected booking process</p>
+            </div>
+            <div class="text-center p-8 bg-gradient-to-br from-white to-gray-50 rounded-2xl card-hover border border-gray-100">
+              <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg">
+                <i class="fas fa-headset text-white text-2xl"></i>
+              </div>
+              <h4 class="font-semibold mb-2">24/7 Support</h4>
+              <p class="text-sm text-gray-600">Always here to help</p>
+            </div>
+            <div class="text-center p-8 bg-gradient-to-br from-white to-gray-50 rounded-2xl card-hover border border-gray-100">
+              <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg">
+                <i class="fas fa-star text-white text-2xl"></i>
+              </div>
+              <h4 class="font-semibold mb-2">Trusted Service</h4>
+              <p class="text-sm text-gray-600">Loved by travelers</p>
+            </div>
+          </div>
+        </div>
+        <!-- IATA Accreditation Banner - Full Width -->
+        <div class="mt-16">
+          <div class="bg-gradient-to-r from-orange-50 to-orange-100 p-10 rounded-2xl card-hover border-2 border-orange-200 text-center">
+            <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <i class="fas fa-certificate text-white text-3xl"></i>
+            </div>
+            <h3 class="text-3xl md:text-4xl font-bold text-orange-600 mb-4">IATA Accredited Agent</h3>
+            <p class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+              As an IATA accredited agent, we adhere to the highest industry standards for your peace of mind.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section><!-- Services Section -->
+    <section id="services" class="py-16 services-bg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-black">Our Ticketing Services</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-2xl card-hover border border-gray-100">
+            <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <i class="fas fa-plane-departure text-white text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Domestic Flight Tickets</h3>
+            <p class="text-gray-600 leading-relaxed">Travel within Ethiopia with ease and comfort</p>
+          </div>
+          <div class="bg-white p-8 rounded-2xl card-hover border border-gray-100">
+            <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <i class="fas fa-globe-americas text-white text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">International Flight Tickets</h3>
+            <p class="text-gray-600 leading-relaxed">Explore destinations around the world</p>
+          </div>
+          <div class="bg-white p-8 rounded-2xl card-hover border border-gray-100">
+            <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">e-LMIS Agent Services</h3>
+            <p class="text-gray-600 leading-relaxed">Listed on the e-LMIS system with affordable prices</p>
+          </div>
+          <div class="bg-white p-8 rounded-2xl card-hover border border-gray-100">
+            <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <i class="fas fa-sync-alt text-white text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Ticket Rebooking</h3>
+            <p class="text-gray-600 leading-relaxed">Change dates and modify bookings hassle-free</p>
+          </div>
+          <div class="bg-white p-8 rounded-2xl card-hover border border-gray-100">
+            <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <i class="fas fa-passport text-white text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Tourist Visa</h3>
+            <p class="text-gray-600 leading-relaxed">Visa assistance for your travel needs</p>
+          </div>
+          <div class="bg-white p-8 rounded-2xl card-hover border border-gray-100">
+            <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <i class="fas fa-gift text-white text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Special Packages</h3>
+            <p class="text-gray-600 leading-relaxed">Custom travel solutions tailored for you</p>
+          </div>
+        </div>
+      </div>
+    </section><!-- Partners Section -->
+    <section id="partners" class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h3 class="text-3xl md:text-4xl font-bold text-center mb-12 text-black">Power Travel Partners</h3>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+
+          <!-- Ethiopian Airlines -->
+          <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105 flex items-center justify-center h-40">
+            <img src="/assets/logos/ethiopian.png" alt="Ethiopian Airlines" class="max-h-full max-w-full object-contain" />
+          </div>
+
+          <!-- Qatar Airways -->
+          <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105 flex items-center justify-center h-40">
+            <img src="/assets/logos/qatar.png" alt="Qatar Airways" class="max-h-full max-w-full object-contain" />
+          </div>
+
+          <!-- Fly Dubai -->
+          <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105 flex items-center justify-center h-40">
+            <img src="/assets/logos/flydubai.png" alt="FlyDubai" class="max-h-full max-w-full object-contain" />
+          </div>
+
+          <!-- Emirates -->
+          <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105 flex items-center justify-center h-40">
+            <img src="/assets/logos/emirates.png" alt="Emirates" class="max-h-full max-w-full object-contain" />
+          </div>
+
+          <!-- EgyptAir -->
+          <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105 flex items-center justify-center h-40">
+            <img src="/assets/logos/egyptair.png" alt="EgyptAir" class="max-h-full max-w-full object-contain" />
+          </div>
+
+          <!-- Etihad Airways -->
+          <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105 flex items-center justify-center h-40">
+            <img src="/assets/logos/etihad.png" alt="Etihad Airways" class="max-h-full max-w-full object-contain" />
+          </div>
+
+          <!-- Air Arabia -->
+          <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105 flex items-center justify-center h-40">
+            <img src="/assets/logos/airarabia.png" alt="Air Arabia" class="max-h-full max-w-full object-contain" />
+          </div>
+
+          <!-- Kenya Airways -->
+          <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105 flex items-center justify-center h-40">
+            <img src="/assets/logos/kenyaairways.png" alt="Kenya Airways" class="max-h-full max-w-full object-contain" />
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- Deals Section -->
+    <section id="deals" class="py-20 deals-bg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-white">Featured Deals</h2>
+          <div class="w-24 h-1 bg-white mx-auto mb-6 rounded-full opacity-80"></div>
+          <p class="text-xl text-gray-200 max-w-2xl mx-auto">Grab these amazing offers before they're gone!</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-2xl shadow-2xl card-hover border-4 border-orange-500">
+            <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <i class="fas fa-percentage text-white text-2xl"></i>
+            </div>
+            <div class="bg-gradient-to-r from-orange-600 to-orange-500 text-white px-5 py-2 rounded-full inline-block mb-5 text-sm font-bold shadow-lg">
+              SAVE 30%
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-gray-900">Early Bird Discounts</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">Book 2 months in advance and save big on international flights</p>
+            <a href="#booking" class="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-gray-900 to-black text-white rounded-full hover:from-gray-800 hover:to-gray-900 transition-all shadow-lg hover:shadow-xl transform hover:scale-105 font-semibold">
+              <i class="fas fa-plane-departure"></i> Book Now
+            </a>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-2xl card-hover border-4 border-red-500">
+            <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <i class="fas fa-fire text-white text-2xl"></i>
+            </div>
+            <div class="bg-gradient-to-r from-red-600 to-red-500 text-white px-5 py-2 rounded-full inline-block mb-5 text-sm font-bold shadow-lg">
+              HOT DEAL
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-gray-900">Last-Minute Flights</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">Spontaneous travel? Get exclusive rates on immediate departures</p>
+            <a href="#booking" class="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-gray-900 to-black text-white rounded-full hover:from-gray-800 hover:to-gray-900 transition-all shadow-lg hover:shadow-xl transform hover:scale-105 font-semibold">
+              <i class="fas fa-bolt"></i> Book Now
+            </a>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-2xl card-hover border-4 border-blue-500">
+            <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <i class="fas fa-calendar-alt text-white text-2xl"></i>
+            </div>
+            <div class="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-5 py-2 rounded-full inline-block mb-5 text-sm font-bold shadow-lg">
+              SEASONAL
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-gray-900">Holiday Promotions</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">Special seasonal offers for your vacation planning</p>
+            <a href="#booking" class="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-gray-900 to-black text-white rounded-full hover:from-gray-800 hover:to-gray-900 transition-all shadow-lg hover:shadow-xl transform hover:scale-105 font-semibold">
+              <i class="fas fa-gift"></i> Book Now
+            </a>
+          </div>
+        </div>
+        <div class="mt-16 text-center">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-8">Popular Destinations</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="bg-white bg-opacity-95 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
+              <div class="text-4xl mb-3">🇦🇪</div>
+              <p class="font-bold text-xl mb-2 text-gray-900">Dubai</p>
+              <p class="text-orange-600 font-bold text-lg">From $450</p>
+            </div>
+            <div class="bg-white bg-opacity-95 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
+              <div class="text-4xl mb-3">🇬🇧</div>
+              <p class="font-bold text-xl mb-2 text-gray-900">London</p>
+              <p class="text-orange-600 font-bold text-lg">From $680</p>
+            </div>
+            <div class="bg-white bg-opacity-95 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
+              <div class="text-4xl mb-3">🇹🇷</div>
+              <p class="font-bold text-xl mb-2 text-gray-900">Istanbul</p>
+              <p class="text-orange-600 font-bold text-lg">From $520</p>
+            </div>
+            <div class="bg-white bg-opacity-95 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
+              <div class="text-4xl mb-3">🇰🇪</div>
+              <p class="font-bold text-xl mb-2 text-gray-900">Nairobi</p>
+              <p class="text-orange-600 font-bold text-lg">From $280</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- Booking Form Section -->
+    <section id="booking" class="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900">Book Your Ticket</h2>
+          <div class="w-24 h-1 bg-gradient-to-r from-orange-600 to-orange-400 mx-auto mb-6 rounded-full"></div>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">Fill out the form and we'll get back to you with the best options and competitive prices</p>
+        </div>
+        <form id="booking-form" class="bg-white p-10 rounded-3xl shadow-2xl border border-gray-100">
+          <div class="mb-6">
+            <label class="block text-sm font-semibold mb-2">Trip Type</label>
+            <div class="flex gap-4">
+              <label class="flex items-center cursor-pointer">
+                <input type="radio" id="round-trip" name="trip-type" value="round-trip" checked
+                  class="w-4 h-4 text-orange-600 focus:ring-orange-500">
+                <span class="ml-2 text-gray-700">Round Trip</span>
+              </label>
+              <label class="flex items-center cursor-pointer">
+                <input type="radio" id="one-way" name="trip-type" value="one-way"
+                  class="w-4 h-4 text-orange-600 focus:ring-orange-500">
+                <span class="ml-2 text-gray-700">One Way</span>
+              </label>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div class="relative"><label for="from-city" class="block text-sm font-semibold mb-2">From</label> <input
+                type="text" id="from-city" name="from-city" placeholder="Departure city" required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500">
+              <div id="from-dropdown" class="autocomplete-dropdown"></div>
+            </div>
+            <div class="relative"><label for="to-city" class="block text-sm font-semibold mb-2">To</label> <input
+                type="text" id="to-city" name="to-city" placeholder="Destination city" required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500">
+              <div id="to-dropdown" class="autocomplete-dropdown"></div>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div><label for="departure-date" class="block text-sm font-semibold mb-2">Departure Date</label> <input
+                type="date" id="departure-date" name="departure-date" required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500">
+            </div>
+            <div id="return-date-container"><label for="return-date" class="block text-sm font-semibold mb-2">Return Date</label> <input
+                type="date" id="return-date" name="return-date" required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500">
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div><label for="phone-number" class="block text-sm font-semibold mb-2">Phone Number</label> <input
+                type="tel" id="phone-number" name="phone-number" placeholder="+251 912 345 678" required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500">
+            </div>
+            <div><label for="passengers" class="block text-sm font-semibold mb-2">Number of Passengers</label> <input
+                type="number" id="passengers" name="passengers" min="1" value="1" required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500">
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div><label for="travel-class" class="block text-sm font-semibold mb-2">Travel Class</label> <select
+                id="travel-class" name="travel-class" required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500">
+                <option value="economy">Economy</option>
+                <option value="premium-economy">Premium Economy</option>
+                <option value="business">Business</option>
+                <option value="first">First Class</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div><label for="passport_file" class="block text-sm font-semibold mb-2">Passport Copy (Photo) <span class="text-gray-500 text-xs">(Optional)</span></label>
+              <input type="file" id="passport_file" name="passport_file" accept="image/*"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 bg-white">
+            </div>
+            <div><label for="national_id_file" class="block text-sm font-semibold mb-2">ID/National ID Copy
+                (Photo)</label> <input type="file" id="national_id_file" name="national_id_file" accept="image/*"
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 bg-white">
+            </div>
+          </div>
+          <div class="mb-6"><label for="special-requests" class="block text-sm font-semibold mb-2">Special Requests
+              (Optional)</label> <textarea id="special-requests" name="special-requests" rows="4"
+              placeholder="Any special requirements or preferences..."
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"></textarea>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4"><button type="submit" id="submit-whatsapp"
+              class="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg font-semibold transition flex items-center justify-center gap-2">
+              <i class="fab fa-whatsapp text-xl"></i> Send via WhatsApp </button> <button type="button"
+              id="submit-email"
+              class="flex-1 bg-orange-600 hover:bg-orange-700 text-white py-3 px-6 rounded-lg font-semibold transition flex items-center justify-center gap-2">
+              <i class="fas fa-envelope text-xl"></i> Send via Email </button>
+          </div>
+        </form>
+      </div>
+    </section><!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 testimonials-bg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-black">What Our Customers Say</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex mb-4"><span class="text-orange-500">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p class="text-gray-700 mb-4">"Excellent service! They found me the best deal for my trip to Dubai. Highly
+              recommended!"</p>
+            <p class="font-semibold">- Sarah M.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex mb-4"><span class="text-orange-500">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p class="text-gray-700 mb-4">"Fast response and great customer support. Made my family vacation planning so
+              easy!"</p>
+            <p class="font-semibold">- Michael T.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex mb-4"><span class="text-orange-500">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p class="text-gray-700 mb-4">"Professional and reliable. I always book through Power Travel Agency now!"
+            </p>
+            <p class="font-semibold">- Fatima A.</p>
+          </div>
+        </div>
+      </div>
+    </section><!-- Contact Section -->
+    <section id="contact" class="py-20 bg-black text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Get In Touch</h2>
+          <div class="w-24 h-1 bg-orange-600 mx-auto mb-6 rounded-full"></div>
+          <p class="text-xl text-gray-300 max-w-2xl mx-auto">Have a question or ready to book? Send us a message and we'll respond promptly!</p>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="bg-gradient-to-br from-gray-900 to-gray-800 p-10 rounded-3xl shadow-2xl border border-gray-700">
+          <form id="contact-form" class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label for="contact-name" class="block text-sm font-semibold mb-2 text-gray-300">Name</label>
+                <input type="text" id="contact-name" name="contact-name" required
+                  class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:border-orange-500 text-white transition">
+              </div>
+              <div>
+                <label for="contact-email" class="block text-sm font-semibold mb-2 text-gray-300">Email</label>
+                <input type="email" id="contact-email" name="contact-email" required
+                  class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:border-orange-500 text-white transition">
+              </div>
+            </div>
+            <div>
+              <label for="contact-phone" class="block text-sm font-semibold mb-2 text-gray-300">Phone</label>
+              <input type="tel" id="contact-phone" name="contact-phone" required
+                class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:border-orange-500 text-white transition">
+            </div>
+            <div>
+              <label for="contact-message" class="block text-sm font-semibold mb-2 text-gray-300">Message</label>
+              <textarea id="contact-message" name="contact-message" rows="5" required
+                class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:border-orange-500 text-white transition"></textarea>
+            </div>
+            <button type="submit"
+              class="w-full bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white py-4 px-6 rounded-lg font-bold transition-all shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+            <div id="contact-success" class="hidden p-4 bg-green-600 rounded-lg text-center font-semibold">
+              Message sent successfully! We'll get back to you soon.
+            </div>
+          </form>
+        </div>
+        
+        <!-- Social Media Links -->
+        <div class="mt-12 text-center">
+          <p class="text-gray-400 mb-6 text-lg">Or connect with us on social media</p>
+          <div class="flex gap-6 justify-center">
+            <a href="https://wa.me/message/CMWCXXZBWZIMD1" target="_blank" rel="noopener noreferrer" 
+              class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-lg text-2xl">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.facebook.com/share/17WHyDgKxs/" target="_blank" rel="noopener noreferrer"
+              class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-lg text-2xl">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/power_travel_agency" target="_blank" rel="noopener noreferrer"
+              class="w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-lg text-2xl">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@powertravelagency21" target="_blank" rel="noopener noreferrer"
+              class="w-14 h-14 bg-gradient-to-br from-gray-700 to-gray-800 rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-lg text-2xl">
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Footer Content -->
+      <div class="grid md:grid-cols-4 gap-12 mb-12">
+        <!-- Company Info -->
+        <div class="md:col-span-2">
+          <div class="flex items-center space-x-3 mb-6">
+            <img src="/logo.png" alt="Power Travel Agency Logo" class="w-14 h-14 object-contain rounded-lg">
+            <div>
+              <h3 class="text-2xl font-bold">Power Travel Agency</h3>
+              <p class="text-sm text-orange-500 italic font-semibold">Go Beyond Ordinary</p>
+            </div>
+          </div>
+          <p class="text-gray-400 mb-6 leading-relaxed">Your trusted partner for all travel needs. We provide reliable ticketing services with competitive prices and exceptional customer support.</p>
+          <div class="flex gap-4">
+            <a href="https://wa.me/message/CMWCXXZBWZIMD1" target="_blank" class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+              <i class="fab fa-whatsapp text-xl"></i>
+            </a>
+            <a href="https://www.facebook.com/share/17WHyDgKxs/" target="_blank" class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+              <i class="fab fa-facebook text-xl"></i>
+            </a>
+            <a href="https://www.instagram.com/power_travel_agency" target="_blank" class="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+              <i class="fab fa-instagram text-xl"></i>
+            </a>
+            <a href="https://www.tiktok.com/@powertravelagency21" target="_blank" class="w-12 h-12 bg-gradient-to-br from-gray-700 to-gray-800 rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+              <i class="fab fa-tiktok text-xl"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-bold mb-6 text-orange-500">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="#home" class="text-gray-400 hover:text-orange-500 transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Home</a></li>
+            <li><a href="#about" class="text-gray-400 hover:text-orange-500 transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> About Us</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-orange-500 transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Services</a></li>
+            <li><a href="#deals" class="text-gray-400 hover:text-orange-500 transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Deals</a></li>
+            <li><a href="#booking" class="text-gray-400 hover:text-orange-500 transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Book Now</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact Info -->
+        <div>
+          <h4 class="text-lg font-bold mb-6 text-orange-500">Reach Us</h4>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3 text-gray-400">
+              <i class="fas fa-phone text-orange-500 mt-1"></i>
+              <div>
+                <a href="tel:+251940333383" class="hover:text-orange-500 transition block">+251 940 333 383</a>
+                <a href="tel:+251923333222" class="hover:text-orange-500 transition block">+251 923 333 222</a>
+              </div>
+            </li>
+            <li class="flex items-start gap-3 text-gray-400">
+              <i class="fas fa-envelope text-orange-500 mt-1"></i>
+              <a href="mailto:powertravel21@gmail.com" class="hover:text-orange-500 transition">powertravel21@gmail.com</a>
+            </li>
+            <li class="flex items-start gap-3 text-gray-400">
+              <i class="fas fa-map-marker-alt text-orange-500 mt-1"></i>
+              <span>Fered bet Lideta<br>Post Commercial Center<br>Addis Ababa, Ethiopia</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- CTA Section -->
+      <div class="bg-gradient-to-r from-orange-600 to-orange-500 rounded-2xl p-8 mb-12 text-center">
+        <h3 class="text-2xl md:text-3xl font-bold mb-4">Ready to Start Your Journey?</h3>
+        <p class="text-lg mb-6 opacity-90">Book your flight today and experience hassle-free travel</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#booking" class="px-8 py-4 bg-white text-orange-600 rounded-full font-bold hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl transform hover:scale-105">
+            <i class="fas fa-plane-departure mr-2"></i>Book Now
+          </a>
+          <a href="https://wa.me/message/CMWCXXZBWZIMD1" target="_blank" class="px-8 py-4 bg-green-600 text-white rounded-full font-bold hover:bg-green-700 transition-all shadow-lg hover:shadow-xl transform hover:scale-105">
+            <i class="fab fa-whatsapp mr-2"></i>Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+      
+      <!-- Bottom Bar -->
+      <div class="border-t border-gray-800 pt-8 text-center">
+        <p class="text-gray-400 mb-2">&copy; 2025 Power Travel Agency. All rights reserved.</p>
+        <p class="text-orange-500 italic font-semibold">Go Beyond Ordinary</p>
+      </div>
+    </div>
+  </footer><!-- WhatsApp Floating Button --> <a href="https://wa.me/message/CMWCXXZBWZIMD1" target="_blank"
+    rel="noopener noreferrer" class="whatsapp-float" title="Chat on WhatsApp"> <i
+      class="fab fa-whatsapp"></i> </a>
+  <script>
+    const defaultConfig = {
+      primary_color: "#f97316",
+      background_color: "#ffffff",
+      text_color: "#000000",
+      navbar_bg: "#000000",
+      navbar_text: "#ffffff",
+      agency_motto: "Go Beyond Ordinary",
+      about_text: "Power Travel Agency provides reliable ticketing services with a commitment to transparency, speed, and customer satisfaction.",
+      hero_title: "Your Journey Begins Here",
+      hero_subtitle: "Go Beyond Ordinary",
+      whatsapp_number: "https://wa.me/message/CMWCXXZBWZIMD1",
+      primary_phone: "+251 940 333 383",
+      secondary_phone: "+251 923 333 222",
+      email_address: "powertravel21@gmail.com",
+      font_family: "Segoe UI"
+    };
+
+    const cities = [
+      "Addis Ababa", "Dubai", "London", "Istanbul", "Nairobi", "Cairo", "Johannesburg",
+      "New York", "Paris", "Rome", "Berlin", "Madrid", "Amsterdam", "Athens",
+      "Barcelona", "Brussels", "Copenhagen", "Dublin", "Frankfurt", "Geneva",
+      "Helsinki", "Lisbon", "Milan", "Munich", "Oslo", "Prague", "Stockholm",
+      "Vienna", "Warsaw", "Zurich", "Bangkok", "Beijing", "Hong Kong", "Mumbai",
+      "Singapore", "Tokyo", "Seoul", "Kuala Lumpur", "Manila", "Jakarta",
+      "Los Angeles", "Chicago", "Houston", "Phoenix", "San Francisco", "Boston",
+      "Toronto", "Vancouver", "Montreal", "Sydney", "Melbourne", "Auckland"
+    ];
+
+    function setupAutocomplete(inputId, dropdownId) {
+      const input = document.getElementById(inputId);
+      const dropdown = document.getElementById(dropdownId);
+
+      input.addEventListener('input', function () {
+        const value = this.value.toLowerCase().trim();
+        dropdown.innerHTML = '';
+
+        if (value.length < 1) {
+          dropdown.style.display = 'none';
+          return;
+        }
+
+        const matches = cities.filter(city => city.toLowerCase().includes(value)).slice(0, 5);
+
+        if (matches.length > 0) {
+          matches.forEach(city => {
+            const item = document.createElement('div');
+            item.className = 'autocomplete-item';
+            item.textContent = city;
+            item.onclick = function () {
+              input.value = city;
+              dropdown.style.display = 'none';
+            };
+            dropdown.appendChild(item);
+          });
+          dropdown.style.display = 'block';
+        } else {
+          dropdown.style.display = 'none';
+        }
+      });
+
+      document.addEventListener('click', function (e) {
+        if (e.target !== input) {
+          dropdown.style.display = 'none';
+        }
+      });
+    }
+
+    setupAutocomplete('from-city', 'from-dropdown');
+    setupAutocomplete('to-city', 'to-dropdown');
+
+    // Handle trip type change
+    const roundTripRadio = document.getElementById('round-trip');
+    const oneWayRadio = document.getElementById('one-way');
+    const returnDateContainer = document.getElementById('return-date-container');
+    const returnDateInput = document.getElementById('return-date');
+
+    function updateTripType() {
+      if (oneWayRadio.checked) {
+        returnDateContainer.style.display = 'none';
+        returnDateInput.removeAttribute('required');
+        returnDateInput.value = '';
+      } else {
+        returnDateContainer.style.display = 'block';
+        returnDateInput.setAttribute('required', 'required');
+      }
+    }
+
+    roundTripRadio.addEventListener('change', updateTripType);
+    oneWayRadio.addEventListener('change', updateTripType);
+    updateTripType(); // Initialize on page load
+
+    const navbar = document.getElementById('navbar');
+    const navLinks = document.querySelectorAll('#nav-menu a, #mobile-menu a');
+    const logoText = document.getElementById('logo-text');
+    const mottoText = document.getElementById('motto-text');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 50) {
+        // Scrolled down - black background
+        navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+        navbar.classList.add('shadow-lg');
+        logoText.style.color = '#ffffff';
+        mottoText.style.color = '#d1d5db';
+        mobileMenuBtn.style.color = '#ffffff';
+        navLinks.forEach(link => {
+          link.style.color = '#ffffff';
+        });
+      } else {
+        // At top - white background
+        navbar.style.background = 'rgba(255, 255, 255, 1)';
+        navbar.classList.remove('shadow-lg');
+        navbar.classList.add('shadow-md');
+        logoText.style.color = '#000000';
+        mottoText.style.color = '#4b5563';
+        navLinks.forEach(link => {
+          link.style.color = '#1f2937';
+        });
+      }
+    });
+
+    mobileMenuBtn.addEventListener('click', function () {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          mobileMenu.classList.add('hidden');
+        }
+      });
+    });
+    const bookingForm = document.getElementById('booking-form');
+    const submitWhatsApp = document.getElementById('submit-whatsapp');
+    const submitEmail = document.getElementById('submit-email');
+
+    function getFormData() {
+      const tripType = document.querySelector('input[name="trip-type"]:checked').value;
+      const fromCity = document.getElementById('from-city').value;
+      const toCity = document.getElementById('to-city').value;
+      const departureDate = document.getElementById('departure-date').value;
+      const returnDate = document.getElementById('return-date').value;
+      const phoneNumber = document.getElementById('phone-number').value;
+      const passengers = document.getElementById('passengers').value;
+      const travelClass = document.getElementById('travel-class').value;
+      const specialRequests = document.getElementById('special-requests').value;
+
+      let message = `✈️ *Flight Booking Request*\n\n`;
+      message += `🎫 *Trip Type:* ${tripType === 'one-way' ? 'One Way' : 'Round Trip'}\n`;
+      message += `📍 *From:* ${fromCity}\n`;
+      message += `🎯 *To:* ${toCity}\n`;
+      message += `📅 *Departure:* ${departureDate}\n`;
+      if (returnDate && tripType === 'round-trip') message += `🔄 *Return:* ${returnDate}\n`;
+      message += `📞 *Phone:* ${phoneNumber}\n`;
+      message += `👥 *Passengers:* ${passengers}\n`;
+      message += `💺 *Class:* ${travelClass}\n`;
+      if (specialRequests) message += `📝 *Special Requests:* ${specialRequests}\n`;
+      message += `\n📸 *Note:* I will attach my Passport and ID photos in the chat.\n`;
+      message += `\n🙏 Please provide the best available options and pricing. Thank you!`;
+
+      return message;
+    }
+
+    submitWhatsApp.addEventListener('click', async function (e) {
+      e.preventDefault();
+      if (bookingForm.checkValidity()) {
+        try {
+          // Show loading state
+          const originalText = submitWhatsApp.innerHTML;
+          submitWhatsApp.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+          submitWhatsApp.disabled = true;
+
+          const formData = new FormData(bookingForm);
+          const response = await fetch('/submit-whatsapp', {
+            method: 'POST',
+            body: formData
+          });
+
+          const result = await response.json();
+
+          if (result.success) {
+            alert('✅ Booking sent via WhatsApp successfully! We will review your documents and contact you shortly.');
+            bookingForm.reset();
+            updateTripType();
+          } else {
+            alert('❌ Failed to send WhatsApp message. Please try again or contact us directly.');
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          alert('❌ An error occurred. Please try again.');
+        } finally {
+          // Reset button state
+          submitWhatsApp.innerHTML = '<i class="fab fa-whatsapp text-xl"></i> Send via WhatsApp';
+          submitWhatsApp.disabled = false;
+        }
+      } else {
+        bookingForm.reportValidity();
+      }
+    });
+
+    submitEmail.addEventListener('click', async function (e) {
+      e.preventDefault();
+      if (bookingForm.checkValidity()) {
+        try {
+          // Show loading state
+          submitEmail.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+          submitEmail.disabled = true;
+
+          const formData = new FormData(bookingForm);
+          const response = await fetch('/submit-booking', {
+            method: 'POST',
+            body: formData
+          });
+
+          const result = await response.json();
+
+          if (result.success) {
+            alert('Booking request sent successfully! We will contact you soon.');
+            bookingForm.reset();
+            updateTripType();
+          } else {
+            alert('Failed to send booking request. Please try again.');
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          alert('Failed to send booking request. Please try again.');
+        } finally {
+          // Reset button state
+          submitEmail.innerHTML = '<i class="fas fa-envelope text-xl"></i> Send via Email';
+          submitEmail.disabled = false;
+        }
+      } else {
+        bookingForm.reportValidity();
+      }
+    });
+
+    const contactForm = document.getElementById('contact-form');
+    const contactSuccess = document.getElementById('contact-success');
+
+    contactForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      try {
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+
+        const formData = new FormData(contactForm);
+        const response = await fetch('/submit-contact', {
+          method: 'POST',
+          body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          contactSuccess.classList.remove('hidden');
+          contactForm.reset();
+
+          setTimeout(() => {
+            contactSuccess.classList.add('hidden');
+          }, 5000);
+        } else {
+          alert('Failed to send message. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Failed to send message. Please try again.');
+      } finally {
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        submitBtn.innerHTML = 'Send Message';
+        submitBtn.disabled = false;
+      }
+    });
+
+    async function onConfigChange(config) {
+      const primaryColor = config.primary_color || defaultConfig.primary_color;
+      const backgroundColor = config.background_color || defaultConfig.background_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const navbarBg = config.navbar_bg || defaultConfig.navbar_bg;
+      const navbarText = config.navbar_text || defaultConfig.navbar_text;
+      const fontFamily = config.font_family || defaultConfig.font_family;
+
+      document.body.style.fontFamily = `${fontFamily}, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif`;
+
+      const navbar = document.getElementById('navbar');
+      navbar.style.color = navbarText;
+
+      const logoText = document.getElementById('logo-text');
+      logoText.style.color = navbarText;
+
+      const mottoText = document.getElementById('motto-text');
+      mottoText.textContent = config.agency_motto || defaultConfig.agency_motto;
+      mottoText.style.color = navbarText;
+
+      const heroTitle = document.getElementById('hero-title');
+      heroTitle.textContent = config.hero_title || defaultConfig.hero_title;
+
+      const heroSubtitle = document.getElementById('hero-subtitle');
+      heroSubtitle.textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+
+      const aboutDescription = document.getElementById('about-description');
+      aboutDescription.textContent = config.about_text || defaultConfig.about_text;
+
+      const phonePrimary = document.getElementById('phone-primary');
+      phonePrimary.textContent = config.primary_phone || defaultConfig.primary_phone;
+      phonePrimary.href = `tel:${(config.primary_phone || defaultConfig.primary_phone).replace(/\s/g, '')}`;
+
+      const phoneSecondary = document.getElementById('phone-secondary');
+      phoneSecondary.textContent = config.secondary_phone || defaultConfig.secondary_phone;
+      phoneSecondary.href = `tel:${(config.secondary_phone || defaultConfig.secondary_phone).replace(/\s/g, '')}`;
+
+      const emailLink = document.getElementById('email-link');
+      emailLink.textContent = config.email_address || defaultConfig.email_address;
+      emailLink.href = `mailto:${config.email_address || defaultConfig.email_address}`;
+
+      const style = document.createElement('style');
+      style.textContent = `
+        a:hover, .hover\\:text-orange-500:hover { color: ${primaryColor} !important; }
+        .bg-orange-600 { background-color: ${primaryColor} !important; }
+        .hover\\:bg-orange-700:hover { background-color: ${primaryColor} !important; filter: brightness(0.9); }
+        .text-orange-600, .text-orange-500 { color: ${primaryColor} !important; }
+        .border-orange-500 { border-color: ${primaryColor} !important; }
+        .focus\\:border-orange-500:focus { border-color: ${primaryColor} !important; }
+      `;
+      document.head.appendChild(style);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.primary_color || defaultConfig.primary_color,
+              set: (value) => {
+                config.primary_color = value;
+                window.elementSdk.setConfig({ primary_color: value });
+              }
+            },
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => {
+                config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            },
+            {
+              get: () => config.navbar_bg || defaultConfig.navbar_bg,
+              set: (value) => {
+                config.navbar_bg = value;
+                window.elementSdk.setConfig({ navbar_bg: value });
+              }
+            },
+            {
+              get: () => config.navbar_text || defaultConfig.navbar_text,
+              set: (value) => {
+                config.navbar_text = value;
+                window.elementSdk.setConfig({ navbar_text: value });
+              }
+            },
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => {
+              config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          },
+          fontSizeable: undefined
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ["agency_motto", config.agency_motto || defaultConfig.agency_motto],
+          ["about_text", config.about_text || defaultConfig.about_text],
+          ["hero_title", config.hero_title || defaultConfig.hero_title],
+          ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
+          ["whatsapp_number", config.whatsapp_number || defaultConfig.whatsapp_number],
+          ["primary_phone", config.primary_phone || defaultConfig.primary_phone],
+          ["secondary_phone", config.secondary_phone || defaultConfig.secondary_phone],
+          ["email_address", config.email_address || defaultConfig.email_address]
+        ])
+      });
+    }
+
+    onConfigChange(defaultConfig);
+  </script>
+</body>
+
+</html>
